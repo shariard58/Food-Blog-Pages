@@ -1,0 +1,407 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Acme&family=Lily+Script+One&family=Mulish:ital,wght@0,500;0,700;1,300&family=Playfair+Display:ital,wght@1,700&family=Yanone+Kaffeesatz&display=swap"); */
+
+:root {
+  --primary-color: #202020;
+  --secondary-color: #f4f7fc;
+  --grey: #a6a6a6;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 1.6rem 0;
+}
+
+p {
+  font-weight: 400;
+  margin: 1.6 rem 0;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  letter-spacing: 1.5px;
+}
+
+h3 {
+  font-size: 2.5rem;
+  letter-spacing: 1.5px;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+span {
+  color: var(--grey);
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  margin: 1.6rem 0;
+  color: var(--grey);
+  font-size: 1.6rem;
+  border-bottom: 2px dotted var(--primary-color);
+}
+
+a:hover {
+  background-color: #c8d366;
+}
+
+/* 
+// Till now all the basic styles are done  */
+
+/* Now the other part  */
+
+.site-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* for making the images resonsive  */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  margin: 16px 0;
+}
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .menu a {
+  border-bottom: none;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-left: 24px;
+}
+.mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+    font-size: 25px;
+  }
+
+  .menu {
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    top: 100%;
+    z-index: 99;
+    display: none;
+  }
+
+  .menu a {
+    padding: 32px 0;
+    font-size: 18px;
+    display: block;
+  }
+
+  .show {
+    display: block;
+  }
+}
+
+/* [ all the css for basic set up and navigation bar ] */
+
+/* Hero section  */
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  position: relative;
+}
+
+.hero .left {
+  background: url(images/image1.jpg);
+  background-size: cover;
+  height: 70vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hero .right {
+  background-color: #c8d366;
+}
+
+.hero .content-box {
+  position: absolute;
+  background-color: #fffffc;
+  padding: 15px;
+  width: 35%;
+  top: 50%;
+  left: 65%;
+  transform: translate(-40%, -50%);
+}
+
+/* Mobile view for the hero section  */
+
+@media screen and (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero .content-box {
+    width: 80%;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: white;
+  }
+
+  .hero span {
+    font-size: 10px;
+  }
+
+  .hero h1 {
+    font-size: 20px;
+  }
+}
+
+/* Hero section css done  */
+
+/* Now the  blog section css starts  */
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-top: 50px;
+  grid-gap: 60px;
+}
+
+.blog {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 48px;
+}
+
+.blog .thumbnil {
+  object-fit: contain;
+}
+
+.blog-post {
+  background-color: var(--secondary-color);
+  margin: 8px 0;
+  padding: 16px;
+}
+.thumbnil img {
+  height: 20rem;
+  width: 40rem;
+}
+
+.blog-content {
+  margin-top: 24px;
+}
+
+/* Blog content for mobile version  */
+
+@media only screen and (max-width: 768px) {
+  .blog {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .blog {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination .active {
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
+}
+
+.pagination a {
+  color: var(--primary-color);
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 0;
+}
+
+/* Blog section ends  */
+
+/* the css of asides section */
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .thumb {
+  flex: 1;
+}
+
+.wrapper .content {
+  flex: 2;
+  padding: 16px;
+}
+
+.wrapper p,
+span,
+a {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.wrapper img {
+  height: 10rem;
+  width: 15rem;
+}
+
+/* // For all in all mobile version  */
+
+@media only screen and (max-width: 768px) {
+  .site-container {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper {
+    margin: 24px 0;
+  }
+}
+
+/* Css for Footer section  */
+
+footer {
+  background-color: #212124;
+  margin-top: 80px;
+  padding: 100px 0;
+}
+
+footer h3 {
+  color: #fffffc;
+}
+
+footer p,
+span,
+a {
+  color: #9b9ca1;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  grid-gap: 16px;
+  justify-items: center;
+}
+
+.p2 {
+  margin-top: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+footer hr {
+  margin: 60px 0;
+  border: 2px soli white;
+}
+
+/* // Now the footer buttom */
+
+/* .footer-bottom {
+  margin-top: 50px;
+  display: flex;
+
+  justify-content: space-between;
+} */
+
+.footer-bottom {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+/* // the left side of footer */
+
+.footer-menu li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.social-icons i {
+  color: var(--secondary-color);
+
+  font-size: 16px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  padding: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 15px;
+  }
+
+  .social-icons {
+    margin-top: 30px;
+  }
+}
